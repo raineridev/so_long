@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 02:53:34 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/05 02:54:51 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/05 04:39:30 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <stdlib.h>
 
 // Define
-// # define BUFFER_SIZE 10
+# define BUFFER_SIZE 42
 # define OPEN_MAX 1024
 
 // Functions: 

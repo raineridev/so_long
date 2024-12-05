@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:58:45 by mraineri          #+#    #+#             */
-/*   Updated: 2024/09/22 23:50:52 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/05 04:40:35 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
