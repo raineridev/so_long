@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 03:15:07 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/05 05:29:53 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/05 05:38:11 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void    map_requirements(char *file_path)
         str = get_next_line(fd);
         if(len != ft_strlen(str) && str != NULL)
         {
+            free(str);
             write(2, "Error: Map Invalid", 18);
             exit(1);
         }
     }
+    free(str);
 }
 
