@@ -6,17 +6,18 @@
 #    By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 22:07:05 by mraineri          #+#    #+#              #
-#    Updated: 2024/12/05 04:38:41 by mraineri         ###   ########.fr        #
+#    Updated: 2024/12/08 18:40:43 by mraineri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := so_long
 CC := cc
+DEBUG_FLAGS := -g -O0
 CFLAGS := -I/usr/include -Imlx_linux -O3 # -Wall -Wextra -Werror
 
 # Source and Object Files
 GNL_FILES := gnl/get_next_line_utils.c gnl/get_next_line.c
-FILES := main.c maps/map_requirements.c $(GNL_FILES)
+FILES := map.c maps/map_requirements.c maps/map_render.c maps/get_map.c $(GNL_FILES)
 OBJ_DIR := objects
 OBJECTS := $(addprefix $(OBJ_DIR)/, $(notdir $(FILES:.c=.o))) # Remove o path original
 
@@ -29,10 +30,10 @@ VPATH := $(dir $(SRCS)) # Diretórios de onde os arquivos fontes podem ser encon
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(DEBUG_FLAGS) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	$(CC) $(OBJECTS) -L$(MLX) -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(DEBUG_FLAGS) $(OBJECTS) -L$(MLX) -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 all: $(NAME)
 
