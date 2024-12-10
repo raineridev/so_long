@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 00:24:23 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/08 18:48:45 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:16:47 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char    **get_map(int fd, int line, int size_line)
     y = 0;
     while(y < line) 
         map[y++] = get_next_line(fd);
+    printf("%s", map[0]);
     return (map);
 }

@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:44:50 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/05 02:55:36 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:41:59 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,26 @@
 # include <stdlib.h>
 # include <stdlib.h>
 # include "gnl/get_next_line.h"
+
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define FOLDER_PLAYER "./assets/"
+
+typedef struct players {
+    int y;
+	int x;
+    void *mlx;
+    void *window;
+    void *sprite;
+} s_player;
+
+typedef struct moviment {
+    
+} moviment; 
+int     map_requirements(char *file_path, int *lines);
+void    map_render(char **map, s_player *player, int size_line);
+char    **get_map(int fd, int line, int size_line);
+
 #endif
