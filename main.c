@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraineri <mraineri@studenbt.42lisboa.co    +#+  +:+       +#+        */
+/*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 02:38:42 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/10 17:36:38 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:53:33 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,7 @@ int main(int argc, char *argv[])
     line = map_requirements(argv[1], &size_line);
     printf("Line: %d\nSize Line: %d\n", line, size_line);
     map = get_map(fd, line, size_line);
-    while(y < line)
-    {
-        printf("%s", map[y++]);
-        free(map[y - 1]);
-    }
+
     free(map);
     return (0);
 }
