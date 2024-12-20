@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   resize.c                                           :+:      :+:    :+:   */
+/*   set_sprites.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 19:22:42 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/18 07:35:58 by mraineri         ###   ########.fr       */
+/*   Created: 2024/12/11 23:40:56 by mraineri          #+#    #+#             */
+/*   Updated: 2024/12/16 21:32:00 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void resize(s_game *game)
+s_sprites set_sprites(s_game game)
 {
-    if(game->size_line * 35> 1200)
-      game->size_line = 1200 / 35;
-    if(game->len_line * 35 > 800)
-      game->len_line = 800 / 35;
-    game->window = mlx_new_window(game->mlx, game->size_line * 35, game->len_line * 35, NAME);
+    int img_width;
+    int img_height;
+    s_sprites sprites;
+    
+    sprites.player = mlx_xpm_file_to_image(game.mlx, "assets/mans.xpm", &img_width, &img_height);
+    sprites.wall = mlx_xpm_file_to_image(game.mlx, "assets/wall.xpm", &img_width, &img_height);
+    sprites.collectable = mlx_xpm_file_to_image(game.mlx, "assets/bag33.xpm", &img_width, &img_height);
+    return (sprites);
 }

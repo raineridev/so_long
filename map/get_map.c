@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 00:24:23 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/12 21:17:59 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/19 22:35:04 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ char    **get_map(int fd, int line, int size_line, s_game *game)
         map[y++] = get_next_line(fd);
     game->len_line = line;
     game->size_line = size_line;
+    game->total_lines = y;
     return (map);
 }
