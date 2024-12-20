@@ -6,7 +6,7 @@
 /*   By: mraineri <mraineri@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:44:50 by mraineri          #+#    #+#             */
-/*   Updated: 2024/12/17 22:06:41 by mraineri         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:31:50 by mraineri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,13 @@ typedef struct sprites {
 typedef struct game {
     int y;
 	int x;
+    int camera_pos_x;
+    int camera_pos_y;
+    int collectable;
     int len_line;
     int size_line;
+    int total_size_line;
+    int total_lines;
     void *mlx;
     void *window;
     char **map;
@@ -56,11 +61,13 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 } t_data;
+
 void        resize(s_game *game);
 int         map_requirements(char *file_path, int *lines);
 void        map_render(char **map, s_game *game);
 char        **get_map(int fd, int line, int size_line, s_game *game);
-s_sprites set_sprites(s_game game);
-void validate_move(int keycode, s_game *game);
-void moviment_player(s_game *game, int keycode);
+s_sprites   set_sprites(s_game game);
+void        validate_move(int keycode, s_game *game);
+void        moviment_player(s_game *game, int keycode);
+void        find_player(s_game *game);
 #endif
